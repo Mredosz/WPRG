@@ -14,7 +14,7 @@ function maxFor($tab){
             $max = $tab[$i];
         }
     }
-    return "Max value in for function is: ".$max.'<br>';
+    return "Max value in for function is:  ".$max.'<br>';
 }
 function maxWhile($tab){
     $max = 0;
