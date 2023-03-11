@@ -11,7 +11,7 @@ function primeNumber($number, &$repeat){
     if($number==1){
         return false;
     }
-    for ($i = 2, $repeat = 1; $i <=$number/2; $i++,$repeat++){
+    for ($i = 2, $repeat = 1; $i <=$number/2; $i++, $repeat++){
         if ($number%$i==0){
             return false;
         }
