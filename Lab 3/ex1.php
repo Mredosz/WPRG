@@ -70,12 +70,12 @@
             </tr>
             <tr>
                 <td>
-                    <input type=checkbox name="contact" value="E-mail">E-mail
+                    <label><input type=checkbox name="contact" value="E-mail">E-mail</label>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <input type=checkbox name="contact" value="Phone number">Phone number
+                    <label> <input type=checkbox name="contact" value="Phone number">Phone number</label>
                 </td>
             </tr>
             <tr>
@@ -85,12 +85,12 @@
             </tr>
             <tr>
                 <td>
-                    <input type=radio name="website" value="Yes">Yes
+                    <label><input type=radio name="website" value="Yes">Yes</label>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <input type=radio name="website" value="No" checked="checked">No
+                    <label> <input type=radio name="website" value="No" checked="checked">No</label>
                 </td>
             </tr>
             <tr>
