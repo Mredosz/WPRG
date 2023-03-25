@@ -6,12 +6,10 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>exercise 1</title>
+    <title>Exercise 1</title>
 
 </head>
 <body>
-
-<html>
 
 <FORM name="first" action="ex1.php" method="POST">
     <fieldset>
