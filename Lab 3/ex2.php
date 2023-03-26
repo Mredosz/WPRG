@@ -30,7 +30,6 @@
 <hr>
 <h1 class="h2"><b>Simple</b></h1>
 <?php
-
 if (isset($_POST['number1'])){
     $number1 = $_POST['number1'];
 }else $number1 = " ";
@@ -56,6 +55,7 @@ if (isset($_POST['number3'])){
 </FORM>
 <?php
 function operationSimple(){
+    $score = " ";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (isset($_POST['operation'])) {
             switch ($_POST['operation']) {
@@ -106,6 +106,7 @@ function operationSimple(){
 
 <?php
 function operationAdvanced(){
+    $score = " ";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (isset($_POST['operationAdvanced'])) {
             switch ($_POST['operationAdvanced']) {
