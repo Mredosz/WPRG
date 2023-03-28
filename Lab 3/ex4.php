@@ -37,7 +37,6 @@ function pesel(){
         $yy = substr($id,0,2);
         $mm = substr($id,2,2);
         $dd = substr($id,4,2);
-        $gender = substr($id,9,1);
 
         if ($mm<=92 && $mm>= 81){
             $yy+=1800;
@@ -62,10 +61,11 @@ function pesel(){
 function getGender(){
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $id = $_POST['pesel'];
+    $gender = substr($id,9,1);
         if (strlen($id) != 11) {
             echo "You entered wrong number";
         } else{
-            if ($id[9]%2==0){
+            if ($gender%2==0){
                 echo "Your gender is female";
             }else echo "Your gender is male";
         }
