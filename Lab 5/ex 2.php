@@ -39,29 +39,7 @@ echo $var;
         <title>Exercise 2</title>
     </head>
     <body>
-<?php
-define('COUNTER2', 'licznik.txt');
 
-if(file_exists(COUNTER2))
-{
-    $file = fopen(COUNTER2, "r");
-    flock($file, 1);
-    $var = fgets($file, 100);
-    flock($file, 3);
-    fclose($file);
-    $var++;
-}
-else
-{
-    $var = 1;
-}
-$file = fopen(COUNTER2, "w");
-flock($file, 2);
-fwrite($file, $var);
-flock($file, 3);
-fclose($file);
-echo $var;
-?>
 
     </body>
 </html>
