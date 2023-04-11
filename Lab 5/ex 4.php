@@ -28,8 +28,8 @@ function ip()
                 return true;
             }
         }
-        return false;
     }
+    return false;
 }
     if (ip()){
         include "ex4.1.php";
