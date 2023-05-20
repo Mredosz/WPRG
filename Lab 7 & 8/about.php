@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (isset($_SESSION['id'])){
+    $id = $_SESSION['id'];
+}else{
+    $id=0;
+}
+?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -16,31 +24,33 @@
     </style>
 </head>
 <body>
+<?php
+if ($id !=0){
+?>
+<ul class="nav nav-pills ms-auto flex-nowrap">
+    <li class="nav-item"><a class="nav-link" href="ex%201.php">Home</a></li>
+    <li class="nav-item"><a class="nav-link" href="all_car.php">All Cars</a></li>
+    <li class="nav-item"><a class="nav-link" href="add_car.php">Add Car</a></li>
+    <li class="nav-item"><a class="nav-link" href="my_car.php">My Car</a></li>
+    <li class="nav-item"><a class="nav-link" href=logout.php ><?php echo $_SESSION['userName'] ?></a></li>
 
-    <ul class="nav nav-pills ms-auto flex-nowrap">
-        <li class="nav-item"><a class="nav-link" href="ex%201.php">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="all_car.php">All Cars</a></li>
-        <li class="nav-item"><a class="nav-link" href="add_car.php">Add Car</a></li>
-        <li class="nav-item"><a class="nav-link" href="signup.php">Sign Up</a></li>
-        <li class="nav-item"><a class="nav-link" href=login.php>Log In</a></li>
-
-    </ul>
+</ul>
+<?php
+}else{
+?>
+<ul class="nav nav-pills ms-auto flex-nowrap">
+    <li class="nav-item"><a class="nav-link" href="ex%201.php">Home</a></li>
+    <li class="nav-item"><a class="nav-link" href="all_car.php">All Cars</a></li>
+    <li class="nav-item"><a class="nav-link" href="add_car.php">Add Car</a></li>
+    <li class="nav-item"><a class="nav-link" href="signup.php">Sign Up</a></li>
+    <li class="nav-item"><a class="nav-link" href=login.php>Log In</a></li>
+</ul>
 
 <?php
+}
+?>
+<?php
 $connect = mysqli_connect('localhost', 'root', '', 'mojabaza');
-//
-//
-//if (!$results = mysqli_query($connect,$sql)) {
-//    mysqli_close($connect);
-//    echo 'There was an error';
-//    exit;
-//}
-//
-//$_GET['id'] = mysqli_escape_string($_GET['id']);
-//
-//$zap = mysqli_query("SELECT * FROM samochody WHERE id='".$_GET['id']."' LIMIT 1;");
-//$rek = mysqli_fetch_assoc($zap);
-
 if ($connect === false) {
 }
 

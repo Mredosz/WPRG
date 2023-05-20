@@ -74,7 +74,6 @@ if (isset($_POST['submit'])) {
             }
         }
         ?>
-        <!--After misspelling the password, the first Name, last name and email remains-->
 
 
         <label for="login"><b>Login</b></label>

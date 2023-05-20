@@ -18,7 +18,7 @@ if (isset($_POST['submit'])) {
         $_SESSION['userName'] = $row['login'];
         $_SESSION['id'] = $row['id'];
         $_SESSION['id_rola'] = $row['id_rola'];
-        header("Location: users_index.php");
+        header("Location: ex 1.php");
     } else {
         $error[] = "Wrong password or email";
     }

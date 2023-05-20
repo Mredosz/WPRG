@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (isset($_SESSION['id'])){
+    $id = $_SESSION['id'];
+}else{
+    $id=0;
+}
+?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -16,14 +24,31 @@
     </style>
 </head>
 <body>
+<?php
+if ($id !=0){
+    ?>
+    <ul class="nav nav-pills ms-auto flex-nowrap">
+        <li class="nav-item"><a class="nav-link" href="ex%201.php">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="all_car.php">All Cars</a></li>
+        <li class="nav-item"><a class="nav-link" href="add_car.php">Add Car</a></li>
+        <li class="nav-item"><a class="nav-link" href="my_car.php">My Car</a></li>
+        <li class="nav-item"><a class="nav-link" href=logout.php ><?php echo $_SESSION['userName'] ?></a></li>
+
+    </ul>
+    <?php
+}else{
+    ?>
     <ul class="nav nav-pills ms-auto flex-nowrap">
         <li class="nav-item"><a class="nav-link" href="ex%201.php">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="all_car.php">All Cars</a></li>
         <li class="nav-item"><a class="nav-link" href="add_car.php">Add Car</a></li>
         <li class="nav-item"><a class="nav-link" href="signup.php">Sign Up</a></li>
         <li class="nav-item"><a class="nav-link" href=login.php>Log In</a></li>
-
     </ul>
+
+    <?php
+}
+?>
 <form action="add_car.php" method="GET">
     <input type="text" name="make" placeholder="Make" required >
     <input type="text" name="model" placeholder="Model" required>

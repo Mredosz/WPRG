@@ -25,9 +25,9 @@ $level = $_SESSION['id_rola'];
 <body>
 <!--Short navbar to navigate to main website and user staff-->
 <ul class="nav nav-pills ms-auto flex-nowrap">
-    <li class="nav-item"><a class="nav-link" href="users_index.php">Home</a></li>
-    <li class="nav-item"><a class="nav-link" href="all_car_users.php">All Cars</a></li>
-    <li class="nav-item"><a class="nav-link" href="add_car_users.php">Add Car</a></li>
+    <li class="nav-item"><a class="nav-link" href="ex%201.php">Home</a></li>
+    <li class="nav-item"><a class="nav-link" href="all_car.php">All Cars</a></li>
+    <li class="nav-item"><a class="nav-link" href="add_car.php">Add Car</a></li>
     <li class="nav-item"><a class="nav-link" href="my_car.php">My Car</a></li>
     <li class="nav-item"><a class="nav-link" href=logout.php ><?php echo $_SESSION['userName'] ?></a></li>
 
@@ -133,7 +133,6 @@ $level = $_SESSION['id_rola'];
                 }
                 }else{
                     echo " ";
-//                    header("Location: 404Error.php");
                 }
 
             }
