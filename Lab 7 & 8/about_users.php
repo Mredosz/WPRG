@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -18,11 +21,11 @@
 <body>
 
     <ul class="nav nav-pills ms-auto flex-nowrap">
-        <li class="nav-item"><a class="nav-link" href="ex%201.php">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="all_car.php">All Cars</a></li>
-        <li class="nav-item"><a class="nav-link" href="add_car.php">Add Car</a></li>
-        <li class="nav-item"><a class="nav-link" href="signup.php">Sign Up</a></li>
-        <li class="nav-item"><a class="nav-link" href=login.php>Log In</a></li>
+        <li class="nav-item"><a class="nav-link" href="users_index.php">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="all_car_users.php">All Cars</a></li>
+        <li class="nav-item"><a class="nav-link" href="add_car_users.php">Add Car</a></li>
+        <li class="nav-item"><a class="nav-link" href="my_car.php">My Car</a></li>
+        <li class="nav-item"><a class="nav-link" href=logout.php ><?php echo $_SESSION['userName'] ?></a></li>
 
     </ul>
 
@@ -58,7 +61,7 @@ $description = $row['5'];
 ?>
 <table>
     <tr>
-<!--        <td>ID</td>-->
+        <!--        <td>ID</td>-->
         <td>Make</td>
         <td>Model</td>
         <td>Price</td>
@@ -67,13 +70,13 @@ $description = $row['5'];
     </tr>
     <?php
 
-        echo "<tr>";
-        echo "<td>$made</td>";
-        echo "<td>$model</td>";
-        echo "<td>$price</td>";
-        echo "<td>$year</td>";
-        echo "<td>$description</td>";
-        echo "</tr>";
+    echo "<tr>";
+    echo "<td>$made</td>";
+    echo "<td>$model</td>";
+    echo "<td>$price</td>";
+    echo "<td>$year</td>";
+    echo "<td>$description</td>";
+    echo "</tr>";
     mysqli_close($connect);
     ?>
 </table>

@@ -1,4 +1,5 @@
 <?php
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -19,17 +20,16 @@
 </head>
 <body>
 
-    <ul class="nav nav-pills ms-auto flex-nowrap">
-        <li class="nav-item"><a class="nav-link" href="ex%201.php">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="all_car.php">All Cars</a></li>
-        <li class="nav-item"><a class="nav-link" href="add_car.php">Add Car</a></li>
-        <li class="nav-item"><a class="nav-link" href="signup.php">Sign Up</a></li>
-        <li class="nav-item"><a class="nav-link" href=login.php>Log In</a></li>
+<ul class="nav nav-pills ms-auto flex-nowrap">
+    <li class="nav-item"><a class="nav-link" href="users_index.php">Home</a></li>
+    <li class="nav-item"><a class="nav-link" href="all_car_users.php">All Cars</a></li>
+    <li class="nav-item"><a class="nav-link" href="add_car_users.php">Add Car</a></li>
+    <li class="nav-item"><a class="nav-link" href="my_car.php">My Car</a></li>
+    <li class="nav-item"><a class="nav-link" href=logout.php ><?php echo $_SESSION['userName'] ?></a></li>
 
-    </ul>
-
+</ul>
 <?php
-require_once 'home.php';
+require_once 'home_users.php';
 ?>
 </body>
 </html>

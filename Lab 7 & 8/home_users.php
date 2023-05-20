@@ -24,7 +24,7 @@ if (!$results = mysqli_query($connect,$query)){
         echo "<td>$row[1]</td>";
         echo "<td>$row[2]</td>";
         echo "<td>$row[3]</td>";
-        echo("<td><a class='btn btn-danger' href=\"about.php?id=$row[0]\">About</a></td>");
+        echo("<td><a class='btn btn-danger' href=\"about_users.php?id=$row[0]\">About</a></td>");
         echo "</tr>";
     }
     mysqli_close($connect);

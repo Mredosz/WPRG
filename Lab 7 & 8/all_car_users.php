@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -16,13 +19,12 @@
     </style>
 </head>
 <body>
-
 <ul class="nav nav-pills ms-auto flex-nowrap">
-    <li class="nav-item"><a class="nav-link" href="ex%201.php">Home</a></li>
-    <li class="nav-item"><a class="nav-link" href="all_car.php">All Cars</a></li>
-    <li class="nav-item"><a class="nav-link" href="add_car.php">Add Car</a></li>
-    <li class="nav-item"><a class="nav-link" href="signup.php">Sign Up</a></li>
-    <li class="nav-item"><a class="nav-link" href=login.php>Log In</a></li>
+    <li class="nav-item"><a class="nav-link" href="users_index.php">Home</a></li>
+    <li class="nav-item"><a class="nav-link" href="all_car_users.php">All Cars</a></li>
+    <li class="nav-item"><a class="nav-link" href="add_car_users.php">Add Car</a></li>
+    <li class="nav-item"><a class="nav-link" href="my_car.php">My Car</a></li>
+    <li class="nav-item"><a class="nav-link" href=logout.php ><?php echo $_SESSION['userName'] ?></a></li>
 
 </ul>
 <?php
@@ -43,18 +45,18 @@ if (!$results = mysqli_query($connect,$query)){
         <td>Model</td>
         <td>Price</td>
     </tr>
-<?php
-while ($row = mysqli_fetch_row($results)){
-    echo "<tr>";
-    echo "<td>$row[0]</td>";
-    echo "<td>$row[1]</td>";
-    echo "<td>$row[2]</td>";
-    echo "<td>$row[3]</td>";
-    echo("<td><a class='btn btn-danger' href=\"about.php?id=$row[0]\">About</a></td>");
-    echo "</tr>";
-}
-mysqli_close($connect);
-?>
+    <?php
+    while ($row = mysqli_fetch_row($results)){
+        echo "<tr>";
+        echo "<td>$row[0]</td>";
+        echo "<td>$row[1]</td>";
+        echo "<td>$row[2]</td>";
+        echo "<td>$row[3]</td>";
+        echo("<td><a class='btn btn-danger' href=\"about_users.php?id=$row[0]\">About</a></td>");
+        echo "</tr>";
+    }
+    mysqli_close($connect);
+    ?>
 </table>
 </body>
 </html>
